@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- ICONS -->
+  <script src="https://kit.fontawesome.com/939c0dd34d.js" crossorigin="anonymous"></script>
+  <!-- FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <nav id="nav-bar">
+      <img src="/img/logo.svg" alt="logo-nike" id="logo">
+      <ul id="menu">
+        <li class="menu-item"><a href="#">MEN</a></li>
+        <li class="menu-item"><a href="#">WOMAN</a></li>
+        <li class="menu-item"><a href="#">KIDS</a></li>
+      </ul>
+      <div id="search-bar">
+        <i class="fa fa-search"></i>
+        <input type="text" placeholder="Search">
+      </div>
+      <div id="bag">
+        <i class="fa fa-bag-shopping"></i>
+      </div>
+    </nav>
+    <div id="theme-select-btn">
+      <button id="btn-theme">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </button>
+    </div>
+    <main id="main-content">
+      <div id="product-info">
+        <h1 id="product-name">Court Borough Low 2</h1>
+        <p id="product-description">Comfort meets style in the Nike Court Borough Low 2. The supportive, structured fit
+          has a throwback hoops design, so
+          you'll be a star off the court, too.</p>
+        <span id="product-price">
+          <span>$</span>80<span>.00</span>
+        </span>
+        <button id="btn-add-to-bag">Add to bag</button>
+      </div>
+      <div id="product-viewer">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <img src="/img/shoe/Ni_3.png" alt="" id="img-rotate">
+        <div id="rotate-controllers">
+          <button id="btn-previous"><i class="fa fa-chevron-left"></i></button>
+          <button id="btn-next"> <i class="fa fa-chevron-right"></i></button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="/js/product-viewer.js"></script>
+  <script src="/js/theme.js"></script>
+</body>
+
+</html>
