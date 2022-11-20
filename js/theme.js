@@ -1,5 +1,6 @@
 const root = document.querySelector(":root");
 const btnTheme = document.querySelector("#btn-theme");
+const btnThemeMobile = document.querySelector("#btn-theme-mobile");
 const brandLogo = document.querySelector("#logo");
 
 const getStyle = (element, style) =>
@@ -42,20 +43,26 @@ const loadSavedPreferences = () =>
 const loadUserPreferences = () =>
   (loadSavedPreferences()) ? changeTheme(lightMode, true) : savePreferences(false)
 
-btnTheme.addEventListener("click", () => {
+const btnEvents = function (elements) {
+  elements.forEach(element => {
+    element.addEventListener("click", () => {
 
-  if (loadSavedPreferences()) {
+      if (loadSavedPreferences()) {
 
-    savePreferences(false)
-    changeTheme(initialColors)
+        savePreferences(false)
+        changeTheme(initialColors)
 
-  } else {
+      } else {
 
-    savePreferences(true)
+        savePreferences(true)
 
-  }
+      }
 
-  loadUserPreferences();
-});
+      loadUserPreferences();
+    });
+  })
+}
+
+btnEvents([btnTheme, btnThemeMobile])
 
 loadUserPreferences();

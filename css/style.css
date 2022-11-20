@@ -21,11 +21,12 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
-
 
 .container {
   width: 90vw;
+  height: 100vh;
   margin: 0 auto;
 }
 
@@ -38,6 +39,7 @@ body {
   gap: 10px;
   align-content: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
 #logo {
@@ -59,7 +61,8 @@ body {
   list-style: none;
 }
 
-#menu li a {
+#menu li a,
+#menu-mobile-list li a {
   text-decoration: none;
   color: var(--primary-ft-color);
   padding: 10px;
@@ -116,6 +119,19 @@ body {
   order: 4;
 }
 
+#open-menu-mobile-btn {
+  order: 5;
+  display: none;
+  padding: 10px 5px;
+}
+
+#open-menu-mobile-btn i {
+  color: var(--primary-ft-color);
+  font-size: 1.5rem;
+}
+
+#close-menu-mobile-btn {}
+
 #bag::after {
   color: var(--primary-ft-color-static);
   content: "1";
@@ -138,6 +154,71 @@ body {
   background-color: var(--primary-ft-color);
 }
 
+#menu-mobile {
+  position: fixed;
+  width: 80vw;
+  height: 100vh;
+  background-color: var(--secondary-bg-color);
+  z-index: 3;
+  left: 100%;
+  top: 0px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.5s ease;
+}
+
+#menu-mobile.active {
+  left: 20%;
+}
+
+#menu-mobile-list {
+  list-style: none;
+  width: 100%;
+}
+
+#menu-mobile-list li a {
+  font-size: 1.5rem;
+  width: 100%;
+  display: inline-block;
+}
+
+.menu-mobile-item {
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+#mobile-theme-select-btn {
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#menu-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#close-menu-mobile-btn {
+  padding: 1rem;
+}
+
+#close-menu-mobile-btn i {
+  font-size: 1.2rem;
+  color: var(--primary-ft-color);
+}
+
+#menu-fade {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  z-index: 1;
+}
 
 /* END NAVBAR */
 
@@ -149,7 +230,7 @@ body {
   right: 3%;
 }
 
-#btn-theme {
+.btn-theme {
   padding: 0.8rem;
   border: none;
   border-radius: 50%;
@@ -162,7 +243,7 @@ body {
   scale: 105%;
 }
 
-#btn-theme i {
+.btn-theme i {
   font-size: 1.2rem;
   color: var(--primary-bg-color);
 }
@@ -262,7 +343,7 @@ body {
   transform: rotateX(65deg);
   top: 10%;
   left: calc(50% - 50%);
-  z-index: -2;
+  z-index: -5;
 }
 
 #product-viewer .circle:nth-child(2) {
@@ -274,7 +355,7 @@ body {
 #img-rotate {
   max-width: 100%;
   transition: 0.5s ease-out;
-  z-index: 2;
+  z-index: 0;
 }
 
 #rotate-controllers {
@@ -291,7 +372,6 @@ body {
   border: none;
   cursor: pointer;
   color: var(--primary-ft-color-static);
-  z-index: 3;
 }
 
 #rotate-controllers button i {
@@ -320,13 +400,22 @@ body {
 
 @media(max-width: 480px) {
 
-  #nav-bar {
-    justify-content: space-between;
+  .container {
+    height: auto;
   }
 
+  #nav-bar {
+    gap: 15px;
+    margin-bottom: 1rem;
+  }
 
   #menu {
     display: none;
+  }
+
+  #open-menu-mobile-btn {
+    display: inline-block;
+    order: 3;
   }
 
   #logo {
@@ -335,7 +424,7 @@ body {
   }
 
   #search-bar {
-    order: 3;
+    order: 4;
     width: 100%;
   }
 
@@ -343,6 +432,7 @@ body {
     order: 2;
     font-size: 1.5rem;
     padding: 5px;
+    margin-left: auto;
   }
 
   #bag::after {
@@ -350,6 +440,65 @@ body {
     height: 5px;
     right: -5px;
   }
+
+  #main-content {
+    flex-direction: column;
+  }
+
+  #product-info {
+    max-width: 100%;
+    order: 2;
+  }
+
+  #product-viewer {
+    order: 1;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  #product-name {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  #product-description {
+    margin-bottom: 1.5rem;
+  }
+
+  #product-price {
+    margin-bottom: 2rem;
+  }
+
+  #btn-add-to-bag {
+    width: 100%;
+    height: 60px;
+    border-radius: 3rem;
+  }
+
+  #rotate-controllers button i {
+    font-size: 16px;
+  }
+
+  #rotate-controllers {
+    bottom: 20px;
+  }
+
+  #rotate-controllers button:nth-child(1) {
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    padding: .5rem 0.5rem .5rem 1rem;
+  }
+
+  #rotate-controllers button:nth-child(2) {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    padding: .5rem 1rem .5rem 0.5rem;
+  }
+
+  #theme-select-btn {
+    display: none;
+  }
+
 
 }
 
