@@ -12,7 +12,7 @@ function imgAlternate(direction) {
   } else {
     imgActive < imgCount ? imgActive++ : imgActive = 1
   }
-  imgRotate.setAttribute('src', `/img/shoe/Ni_${imgActive}.png`)
+  imgRotate.setAttribute('src', `./img/shoe/Ni_${imgActive}.png`)
 }
 
 function addEventListner(element, action, direction) {
