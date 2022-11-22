@@ -468,6 +468,7 @@ body {
   width: 90vw;
   margin: 0 auto 1rem;
   padding: 1.5rem 0px;
+  max-width: 1200px;
 }
 
 #footer {
