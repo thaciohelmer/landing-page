@@ -2,6 +2,7 @@ const root = document.querySelector(":root");
 const btnTheme = document.querySelector("#btn-theme");
 const btnThemeMobile = document.querySelector("#btn-theme-mobile");
 const brandLogo = document.querySelector("#logo");
+const socialNetworks = document.querySelectorAll('#social-networks img')
 
 const getStyle = (element, style) =>
   window
@@ -14,7 +15,8 @@ const initialColors = {
   primaryFtColor: getStyle(root, "--primary-ft-color"),
   tertiaryBgColor: getStyle(root, "--tertiary-bg-color"),
   quaternaryFtColor: getStyle(root, "--quaternary-ft-color"),
-  quintenaryFtColor: getStyle(root, "--quintenary-ft-color")
+  quintenaryFtColor: getStyle(root, "--quintenary-ft-color"),
+  footerFtColor: getStyle(root, "--footer-font-color")
 }
 
 const lightMode = {
@@ -22,17 +24,22 @@ const lightMode = {
   secondaryBgColor: "#e6e6e6",
   tertiaryBgColor: "#e5e5e5",
   primaryFtColor: "#242424",
-  quaternaryFtColor: "#0004FF",
-  quintenaryFtColor: "#003CFF"
+  footerFtColor: "#ffffff"
 }
 
 const transformKey = key => "--" + key.replace(/([A-Z])/g, "-$1").toLowerCase();
 
-const changeTheme = (colors, logo = false) => {
+const changeTheme = (colors, filters = false) => {
   Object.keys(colors).map(key =>
     root.style.setProperty(transformKey(key), colors[key]));
 
-  (logo) ? brandLogo.style.filter = "contrast(60%)" : brandLogo.style.filter = "invert(100%)"
+  if (filters) {
+    brandLogo.style.filter = "contrast(60%)"
+    socialNetworks.forEach(e => e.style.filter = "invert(100%)")
+  } else {
+    socialNetworks.forEach(e => e.style.filter = "contrast(80%)")
+    brandLogo.style.filter = "invert(100%)"
+  }
 }
 
 const savePreferences = (active) => localStorage.setItem('theme', active)
@@ -66,3 +73,5 @@ const btnEvents = function (elements) {
 btnEvents([btnTheme, btnThemeMobile])
 
 loadUserPreferences();
+
+console.log(socialNetworks);

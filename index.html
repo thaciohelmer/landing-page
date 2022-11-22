@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/styles.css">
   <!-- ICONS -->
   <script src="https://kit.fontawesome.com/939c0dd34d.js" crossorigin="anonymous"></script>
   <!-- FONTS -->
@@ -22,7 +22,7 @@
 
 <body>
   <div class="container">
-    <nav id="nav-bar">
+    <nav class="nav-bar" id="menu-desktop">
       <img src="/img/logo.svg" alt="logo-nike" id="logo">
       <ul id="menu">
         <li class="menu-item"><a href="#">MEN</a></li>
@@ -36,32 +36,29 @@
       <div id="bag">
         <i class="fa fa-bag-shopping"></i>
       </div>
+      <div id="btn-theme" class="btn-theme">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </div>
       <div id="open-menu-mobile-btn">
         <i class="fa-solid fa-bars"></i>
       </div>
-      <div id="menu-mobile">
-        <ul id="menu-mobile-list">
-          <li class="menu-mobile-item"><a href="#">MEN</a></li>
-          <li class="menu-mobile-item"><a href="#">WOMAN</a></li>
-          <li class="menu-mobile-item"><a href="#">KIDS</a></li>
-        </ul>
-        <div id="menu-options">
-          <span id="close-menu-mobile-btn">
-            <i class="fa-solid fa-chevron-left"></i>
-          </span>
-          <div id="mobile-theme-select-btn">
-            <button id="btn-theme-mobile" class="btn-theme">
-              <i class="fa-solid fa-circle-half-stroke"></i>
-            </button>
-          </div>
+    </nav>
+    <nav class="nav-bar" id="menu-mobile">
+      <ul id="menu-mobile-list">
+        <li class="menu-mobile-item"><a href="#">MEN</a></li>
+        <li class="menu-mobile-item"><a href="#">WOMAN</a></li>
+        <li class="menu-mobile-item"><a href="#">KIDS</a></li>
+      </ul>
+      <div id="menu-options">
+        <span id="close-menu-mobile-btn">
+          <i class="fa-solid fa-chevron-left"></i>
+        </span>
+        <div class="btn-theme" id="btn-theme-mobile">
+          <i class="fa-solid fa-circle-half-stroke"></i>
         </div>
       </div>
     </nav>
-    <div id="theme-select-btn">
-      <button id="btn-theme" class="btn-theme">
-        <i class="fa-solid fa-circle-half-stroke"></i>
-      </button>
-    </div>
+    <div id="menu-fade"></div>
     <main id="main-content">
       <div id="product-info">
         <h1 id="product-name">Court Borough Low 2</h1>
@@ -82,9 +79,96 @@
           <button id="btn-next"> <i class="fa fa-chevron-right"></i></button>
         </div>
       </div>
+      <div id="other-products">
+        <div class="btn previous-product" id="carousel-previous" data-action="previous">
+          <i class="fa fa-chevron-up"></i>
+          <i class="fa fa-chevron-left"></i>
+        </div>
+        <div id="images-wrapper">
+          <div id="images">
+            <img class="product-item" src="./img/023341ID.jpg" alt="">
+            <img class="product-item" src="./img/0241125L.jpg" alt="">
+            <img class="product-item" src="./img/0241945L.jpg" alt="">
+            <img class="product-item" src="./img/0223143X.jpg" alt="">
+            <img class="product-item" src="./img/024398NX.jpg" alt="">
+          </div>
+        </div>
+        <div class="btn next-product" id="carousel-next" data-action="next">
+          <i class="fa fa-chevron-down"></i>
+          <i class="fa fa-chevron-right"></i>
+        </div>
+      </div>
     </main>
   </div>
+  <footer id="footer">
+    <div class="container-footer">
+      <div class="row">
+        <div class="col">
+          <h2 class="section-title">Help</h2>
+          <ul id="help">
+            <a href="#">
+              <li>General Questions</li>
+            </a>
+            <a href="#">
+              <li>Find your size</li>
+            </a>
+            <a href="#">
+              <li>Requests</li>
+            </a>
+            <a href="#">
+              <li>Payments</li>
+            </a>
+            <a href="#">
+              <li>Products</li>
+            </a>
+          </ul>
+        </div>
+        <div class="col">
+          <h2 class="section-title">About</h2>
+          <ul id="about">
+            <a href="#">
+              <li>Made to play</li>
+            </a>
+            <a href="#">
+              <li>sustainability</li>
+            </a>
+          </ul>
+        </div>
+        <div class="col">
+          <h2 class="section-title">Social networks</h2>
+          <div id="social-networks">
+            <a href="#"><img src="./img/icons/facebook-circular-logo.png" alt="facebook"></a>
+            <a href="#"><img src="./img/icons/instagram.png" alt="instagra"></a>
+            <a href="#"><img src="./img/icons/youtube.png" alt="youtube"></a>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <div id="other-infos">
+        <div class="other-infos-item">
+          <a href="#">
+            <p>EUA</p>
+          </a>
+        </div>
+        <div class="other-infos-item">
+          <a href="#">
+            <p>Privacy Policy</p>
+          </a>
+        </div>
+        <div class="other-infos-item">
+          <a href="#">
+            <p>Therms of use</p>
+          </a>
+        </div>
+        <div class="copyright">
+          <p>&copy; Thácio Helmer. All rights reserved. Thacio Helmer Ltda - CNPJ: 99.503.627/0001-6 Avenida Presidente
+            Vargas, S/N - CEP: 29260-000 - Domingos Martins - ES</p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
+  <script src="/js/carousel-products.js"></script>
   <script src="/js/product-viewer.js"></script>
   <script src="/js/menu-mobile.js"></script>
   <script src="/js/theme.js"></script>
